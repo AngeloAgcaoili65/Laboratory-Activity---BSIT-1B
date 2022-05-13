@@ -1,0 +1,68 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Wizard and Warlock");
+
+        Wizard Invoke = new Wizard("Invoke");
+        Warlock Kise = new Warlock("Kise");
+        Invoke.defeaningblast(Kise);
+
+        Warlock SeeringChain = new Warlock("SeeringChain");
+        Wizard Dazzle = new Wizard("Dazzle");
+        SeeringChain.Fatalbonds(Dazzle);
+        System.out.println("Wizard Dazzle was defeated by Warlock");
+    }
+}
+
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Wizard and Warlock");
+
+        /**
+         * 7 - Display the Details of each Character at each "phase/turn" to see the current status of the Characters
+         *      - Create a method to display details for better readability
+         */
+        Wizard Invoke = new Wizard("Invoke");
+        Warlock Kise = new Warlock("Kise");
+        Invoke.defeaningblast(Kise);
+
+        Warlock SeeringChain = new Warlock("SeeringChain");
+        Wizard Dazzle = new Wizard("Dazzle");
+        SeeringChain.Fatalbonds(Dazzle);
+        System.out.println("Wizard Dazzle was defeated by Warlock");
+    }
+}
+
+
+
+public class Wizard extends Character{
+    Wizard(String name){
+        super(name);
+    }
+    public void defeaningblast(Character enemyCharacter){
+        System.out.println(super.characterName + "attacks " + enemyCharacter.characterName + " with Defeaning blast (Damage - 50)");
+        int damagePoints = 50;
+        damageTarget(enemyCharacter, damagePoints);
+
+    };
+
+}
+
+
+
+
+public class Warlock extends Character{
+    Warlock(String name){
+        super(name);
+    }
+    public void Fatalbonds(Character enemyCharacter){
+        System.out.println(super.characterName + "attacks " + enemyCharacter.characterName + " with Fatal bonds (Damage - 70)");
+        int damagePoints = 70;
+        damageTarget(enemyCharacter, damagePoints);
+
+        enemyCharacter.healthPoints +=damagePoints;
+        System.out.println("Dazzle casts a Recovery Spell");
+        System.out.println("Recovery spell has no Mana Point Cost");
+    };
+
+}
